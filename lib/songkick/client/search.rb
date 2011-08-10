@@ -4,9 +4,15 @@ module Songkick
 
 			class << self
 
-				def find(event_id)
+				def search_events(*opts)
 				end
 				
+				def search_location(*opts)
+				end
+
+				def search_artists(text)
+				end
+
 			end
 
 		end
