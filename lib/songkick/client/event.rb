@@ -4,7 +4,7 @@ module Songkick
 
 			class << self
 
-				def find(event_id)
+				def find_event(event_id)
 				end
 				
 			end
