@@ -7,5 +7,9 @@ module Songkick
 			@format = format
 		end
 
+		def format=(format)
+			@format = format.to_s
+		end
+
 	end
 end
