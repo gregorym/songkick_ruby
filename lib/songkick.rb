@@ -7,8 +7,8 @@ require "songkick/client.rb"
 
 module Songkick
   class << self
-    
-    def new(api_key, format)
+   
+    def new(api_key, format = :json)
       Songkick::Client.new(api_key, format)
     end
 
