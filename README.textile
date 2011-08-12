@@ -12,7 +12,7 @@ h1. Installation
 
 h1. Usage
 
-h2. Instantiate
+h2. First step
 
 <pre>
 	<code>
