@@ -14,6 +14,3 @@ module Songkick
 
   end
 end
-
-client = Songkick.new("frs8I4dwEXMX5raJ", :json)
-print client.search_location(:location => "86.77.225.90")
