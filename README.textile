@@ -1,0 +1,94 @@
+h1. Songkick ruby
+
+songkick ruby is a gem for the "Songkick api":http://www.songkick.com/developer
+
+h1. Installation
+
+<pre>
+	<code>
+		gem install songkick_ruby
+	</code>
+</pre>
+
+h1. Usage
+
+h2. Instantiate
+
+<pre>
+	<code>
+		client = Songkick.new("your songkick api key", :json)
+		# or
+		client = Songkick::Client.new("your songckick api key", :json)
+	</code>
+</pre>
+
+
+h2. Search
+
+Search events.
+More in,formation here: "http://www.songkick.com/developer/event-search":http://www.songkick.com/developer/event-search
+
+<pre>
+	<code>
+		events = client.search_events(:artist_name => "lady gaga", :location => "clientip:84.102.219.109")
+	</code>
+</pre>
+
+Search locations.
+More in,formation here: "http://www.songkick.com/developer/location-search":http://www.songkick.com/developer/location-search
+
+<pre>
+	<code>
+		locations = client.search_locations(:query => "paris")
+	</code>
+</pre>
+
+Search artists.
+More in,formation "here: http://www.songkick.com/developer/artist-search":here: http://www.songkick.com/developer/artist-search
+
+<pre>
+	<code>
+		artists = client.search_locations("lady gaga")
+	</code>
+</pre>
+
+
+h2. Event
+
+Find an event
+More in,formation here: "http://www.songkick.com/developer/artist-search":http://www.songkick.com/developer/artist-search
+
+<pre>
+	<code>
+		random_event = client.find_event(9969693)
+	</code>
+</pre>
+
+h2. Calendar
+
+Get the calendar of an artist.
+More information here: "http://www.songkick.com/developer/upcoming-events-for-artist":http://www.songkick.com/developer/upcoming-events-for-artist
+
+<pre>
+	<code>
+		coldplay_calendar = client.artist_calendar(197928)
+	</code>
+</pre>
+
+Get the calendar of a location.
+More information here: "http://www.songkick.com/developer/upcoming-events-for-metro-area":http://www.songkick.com/developer/upcoming-events-for-metro-area
+
+<pre>
+	<code>
+		paris = client.artist_calendar(28909)
+	</code>
+</pre>
+
+Get the calendar of a user.
+More information here: "http://www.songkick.com/developer/upcoming-events-for-user":http://www.songkick.com/developer/upcoming-events-for-user
+
+<pre>
+	<code>
+		random_user = client.artist_calendar(847914)
+	</code>
+</pre>
