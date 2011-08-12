@@ -6,7 +6,7 @@ module Songkick
         get "artists/#{artist_id}/calendar.#{format}"
       end
 
-      def location_calendar(metro_areas)
+      def location_calendar(location_id)
         get "metro_areas/#{location_id}/calendar.#{format}"
       end
 
