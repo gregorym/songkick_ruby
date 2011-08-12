@@ -6,15 +6,19 @@ module Songkick
         _opts = opts.collect{|k, v| "#{k}=#{v.gsub(" ", "%20")}"}.join("&")
         get "events.#{format}?#{_opts}"
       end
-        
-      def search_location(opts)
+      alias_method :search_event, :search_events
+
+
+      def search_locations(opts)
         _opts = opts.collect{|k, v| "#{k}=#{v.gsub(" ", "%20")}"}.join("&")
         get "search/locations.#{format}?#{_opts}"
       end
+      alias_method :search_location, :search_location
 
       def search_artists(text)
         get "search/artists.#{format}?query=#{text.gsub(" ","%20")}"
       end
+      alias_method :search_artist, :search_artists
 
     end
   end
