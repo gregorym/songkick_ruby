@@ -13,7 +13,7 @@ module Songkick
         _opts = opts.collect{|k, v| "#{k}=#{v.gsub(" ", "%20")}"}.join("&")
         get "search/locations.#{format}?#{_opts}"
       end
-      alias_method :search_location, :search_location
+      alias_method :search_location, :search_locations
 
       def search_artists(text)
         get "search/artists.#{format}?query=#{text.gsub(" ","%20")}"
