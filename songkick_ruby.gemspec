@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
     songkick_ruby.gemspec
     lib/songkick.rb
     lib/songkick
+    lib/songkick/version.rb
     lib/songkick/client.rb
     lib/songkick/client/calendar.rb
     lib/songkick/client/event.rb
