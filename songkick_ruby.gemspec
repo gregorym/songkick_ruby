@@ -6,6 +6,8 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/gregorym/songkick_ruby"
   s.summary = "Ruby wrapper of the songkick api"
 
+  s.add_dependency('json', '>= 1.5.0')
+
   s.require_path = "lib"
   s.files = %w(
     README.textile
