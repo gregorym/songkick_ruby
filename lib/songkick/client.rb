@@ -10,6 +10,8 @@ module Songkick
     
     attr_accessor :api_key, :format
 
+    # Look at the songkick.rb file for info
+    # Songkick::Client.new == Songkick.new
     def initialize(api_key, format = :json)
       @api_key = api_key
       @format = format
@@ -19,10 +21,12 @@ module Songkick
       @format = format.to_s
     end
 
+    # Clean way to know if the format is in json
     def json?
       format == 'json'
     end
-
+    
+    # Clean way to know if the format is in xml
     def xml?
       format == 'xml'
     end
