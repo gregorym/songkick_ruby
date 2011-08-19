@@ -2,6 +2,7 @@ require "songkick/client/calendar.rb"
 require "songkick/client/event.rb"
 require "songkick/client/request.rb"
 require "songkick/client/search.rb"
+require "songkick/client/user.rb"
 
 module Songkick
   class Client
