@@ -40,6 +40,11 @@ module Songkick
         get "users/#{username}/trackings/metro_area:#{location_id}.#{format}"
       end
 
+      # Attendance
+      def attendance(username, event_id)
+        get "users/#{username}/trackings/event:#{event_id}.#{format}"
+      end
+
     end
   end
 end
