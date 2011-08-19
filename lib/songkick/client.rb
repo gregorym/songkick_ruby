@@ -15,10 +15,6 @@ module Songkick
     # Songkick::Client.new == Songkick.new
     def initialize(api_key, format = :json)
       @api_key = api_key
-      @format = format
-    end
-
-    def format=(format)
       @format = format.to_s
     end
 
