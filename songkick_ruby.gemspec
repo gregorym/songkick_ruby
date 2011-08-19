@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "songkick_ruby"
-  s.version = "1.1.2"
+  s.version = "1.1.3"
   s.author = "Gregory Marcilhacy"
   s.email = "g.marcilhacy@gmail.com"
   s.homepage = "http://github.com/gregorym/songkick_ruby"
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
     lib/songkick/client/calendar.rb
     lib/songkick/client/event.rb
     lib/songkick/client/search.rb
+    lib/songkick/client/user.rb
     lib/songkick/client/request.rb
   )
   
