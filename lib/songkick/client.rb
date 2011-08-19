@@ -34,6 +34,7 @@ module Songkick
     include Songkick::Client::Calendar
     include Songkick::Client::Event
     include Songkick::Client::Search
+    include Songkick::Client::User
     include Songkick::Client::Request
 
   end
