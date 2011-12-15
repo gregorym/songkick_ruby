@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "songkick_ruby"
-  s.version = "1.1.4"
+  s.version = "1.2.0"
   s.author = "Gregory Marcilhacy"
   s.email = "g.marcilhacy@gmail.com"
   s.homepage = "http://github.com/gregorym/songkick_ruby"
