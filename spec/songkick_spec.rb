@@ -1,5 +1,7 @@
 require "./lib/songkick.rb"
 
+API_KEY = "api key example"
+
 describe Songkick do
   describe "#initialization" do
     
@@ -24,4 +26,22 @@ describe Songkick do
     end
 
   end
+
+  describe "#Songkick request" do
+    it "should fail with a wrong API key" do
+      key     = "hello world"
+      client  = Songkick.new(key)
+      
+      response = client.search_artists("Blink 182")
+      response["resultsPage"]["status"].should == "error"
+    end
+
+    it "should success with a valid API key" do 
+      client  = Songkick.new(API_KEY)
+
+      response = client.search_artists("Blink 182")
+      response["resultsPage"]["status"].should == "ok"
+    end
+  end
+
 end
