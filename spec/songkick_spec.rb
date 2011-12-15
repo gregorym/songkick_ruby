@@ -44,4 +44,17 @@ describe Songkick do
     end
   end
 
+  describe "#Songkick event" do
+    before :each do
+      @client = Songkick.new API_KEY
+    end
+
+    it "should find an event" do
+      event = @client.find_event(3037536)
+      event["resultsPage"]["status"].should == "ok"
+      event["resultsPage"]["results"]["event"].is_a?(Hash) == true 
+      event["resultsPage"]["results"]["event"]["displayName"].include?("Vampire") == true 
+    end
+  end
+
 end
