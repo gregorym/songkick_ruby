@@ -56,6 +56,11 @@ module Songkick
       end
       alias_method :search_artist, :search_artists
 
+      # Search for venues
+      def search_venues(text, page = 1)
+        get "search/venues.#{format}?query=#{text.gsub(" ","%20")}", page   
+      end
+
     end
   end
 end

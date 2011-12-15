@@ -44,6 +44,18 @@ module Songkick
         get "users/#{username}/calendar.#{format}", page
       end
 
+      # Find upcoming events for a venue
+      #
+      # Example:
+      # sg = Songkick.new("myapikey")
+      # or events = sg.usersvenue_calendar(123)
+      #
+      # The first argument is the venue_id
+      # and the second argument is the page number,
+      # by default it is set to 1
+      def venue_calendar(venue_id, page = 1)
+        get "users/#{venue_id}/venues.#{format}", page
+      end
     end
   end
 end
