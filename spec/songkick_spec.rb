@@ -29,7 +29,7 @@ describe Songkick do
 
   describe "#Songkick request" do
     it "should fail with a wrong API key" do
-      key     = "hello world"
+      key     = "helloworld"
       client  = Songkick.new(key)
       
       response = client.search_artists("Blink 182")
@@ -55,6 +55,37 @@ describe Songkick do
       event["resultsPage"]["results"]["event"].is_a?(Hash) == true 
       event["resultsPage"]["results"]["event"]["displayName"].include?("Vampire") == true 
     end
+  end
+
+  describe "#Songkick calendar" do
+    before :each do
+      @client = Songkick.new API_KEY
+    end
+
+    it "should search events" do
+      events = @client.search_events({:artist_name => "Coldplay"})
+      events["resultsPage"]["totalEntries"].nil? == false
+      events["resultsPage"]["totalEntries"].is_a?(Integer) == true
+    end
+
+    it "should search locations" do
+      events = @client.search_locations({:query => "Paris"})
+      events["resultsPage"]["totalEntries"].nil? == false
+      events["resultsPage"]["totalEntries"].is_a?(Integer) == true
+    end
+
+    it "should search artists" do
+      events = @client.search_artists("Coldplay")
+      events["resultsPage"]["totalEntries"].nil? == false
+      events["resultsPage"]["totalEntries"].is_a?(Integer) == true
+    end
+
+    it "should search venues" do
+      events = @client.search_venues("Stade de france")
+      events["resultsPage"]["totalEntries"].nil? == false
+      events["resultsPage"]["totalEntries"].is_a?(Integer) == true
+    end
+
   end
 
 end
