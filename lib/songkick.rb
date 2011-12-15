@@ -2,7 +2,6 @@ require "net/http"
 require "rubygems"
 require 'json'
 
-require "songkick/version.rb"
 require "songkick/client.rb"
 
 module Songkick
