@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "songkick_ruby"
-  s.version = "1.2.0"
+  s.version = "1.2.1"
   s.author = "Gregory Marcilhacy"
   s.email = "g.marcilhacy@gmail.com"
   s.homepage = "http://github.com/gregorym/songkick_ruby"
@@ -14,14 +14,17 @@ Gem::Specification.new do |s|
     songkick_ruby.gemspec
     lib/songkick.rb
     lib/songkick
-    lib/songkick/version.rb
     lib/songkick/client.rb
     lib/songkick/client/calendar.rb
     lib/songkick/client/event.rb
     lib/songkick/client/search.rb
     lib/songkick/client/user.rb
     lib/songkick/client/request.rb
+    lib/songkick/client/validations.rb
+    lib/songkick/client/errors.rb
   )
   
-  s.test_files = %w()
+  s.test_files = %w(
+    spec/songkick_spec.rb
+  )
 end
