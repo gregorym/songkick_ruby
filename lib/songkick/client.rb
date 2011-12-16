@@ -1,8 +1,8 @@
-require "songkick/client/calendar.rb"
-require "songkick/client/event.rb"
-require "songkick/client/request.rb"
-require "songkick/client/search.rb"
-require "songkick/client/user.rb"
+require "songkick/client/calendar"
+require "songkick/client/event"
+require "songkick/client/request"
+require "songkick/client/search"
+require "songkick/client/user"
 
 module Songkick
   class Client
