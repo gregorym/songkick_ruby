@@ -1,11 +1,14 @@
+require "songkick/client/errors"
+
 module Songkick
   module Validations
+    include Errors
     
-    class << self
-      def validate_options(option)
-        eval("@valid_option_for_#{option.key} = option.value") 
-      end 
-    end
-
+    def validate_options(valid_opts, opts)
+      if (opts.keys.map(&:to_s) - valid_opts).any?
+        raise InvalidOptions
+      end
+    end 
+  
   end
 end

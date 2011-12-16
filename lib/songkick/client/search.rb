@@ -1,5 +1,8 @@
+require "songkick/client/validations"
+
 module Songkick
   module Search
+    include Validations
 
     # Search for upcoming events
     #
@@ -22,6 +25,8 @@ module Songkick
     # events = sg.search_events({:artist_name => "lady gaga"}, 2)
     # events = sg.search_events({:artist_name => "lady gaga", :location => "clientip=10.10.10.10"} )})
     def search_events(opts, page = 1)
+      validate_options %w(artist_name location min_date max_date), opts
+      
       _opts = opts.collect{|k, v| "#{k}=#{v.gsub(" ", "%20")}"}.join("&")
       get "events.#{format}?#{_opts}", page
     end
@@ -40,6 +45,8 @@ module Songkick
     # sg = Songkick.new("myapikey")
     # locations = sg.search_locations({:query => "Paris"})
     def search_locations(opts, page = 1)
+      validate_options %w(query location), opts
+      
       _opts = opts.collect{|k, v| "#{k}=#{v.gsub(" ", "%20")}"}.join("&")
       get "search/locations.#{format}?#{_opts}", page
     end

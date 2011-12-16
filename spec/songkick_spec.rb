@@ -24,7 +24,16 @@ describe Songkick do
       client.format.should == "xml"
       client.xml?.should be_true
     end
-
+    
+  end
+  
+  describe "#Validations" do
+    it "should raise an exception on wrong options" do
+      client = Songkick.new API_KEY
+      lambda {
+        client.search_event({:location => "Paris", :artist => "Fail!" })
+      }.should raise_error(Songkick::Errors::InvalidOptions)
+    end
   end
 
   describe "#Songkick request" do
