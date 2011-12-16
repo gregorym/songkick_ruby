@@ -1,6 +1,6 @@
 require "./lib/songkick.rb"
 
-API_KEY = "api key example"
+API_KEY = "frs8I4dwEXMX5raJ"
 
 describe Songkick do
   describe "#initialization" do

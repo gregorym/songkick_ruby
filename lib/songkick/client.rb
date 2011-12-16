@@ -7,8 +7,6 @@ require "songkick/client/user"
 module Songkick
   class Client
     
-    API_URL = 'http://api.songkick.com/api/3.0/'
-    
     attr_accessor :api_key, :format
 
     # Look at the songkick.rb file for info
@@ -28,11 +26,11 @@ module Songkick
       format == 'xml'
     end
 
-    include Songkick::Client::Calendar
-    include Songkick::Client::Event
-    include Songkick::Client::Search
-    include Songkick::Client::User
-    include Songkick::Client::Request
+    include Songkick::Calendar
+    include Songkick::Event
+    include Songkick::Search
+    include Songkick::User
+    include Songkick::Request
 
   end
 end

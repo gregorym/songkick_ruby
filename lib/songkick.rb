@@ -5,6 +5,9 @@ require 'json'
 require "songkick/client"
 
 module Songkick
+  
+  API_URL = 'http://api.songkick.com/api/3.0/'
+  
   class << self
    	
    	# In order to use the API you must have an API key
