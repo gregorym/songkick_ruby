@@ -44,5 +44,10 @@ module Songkick
       get "users/#{username}/trackings/event:#{event_id}.#{format}"
     end
 
+    # Paginated list of muted artists. 
+    def muted_artists(page = 1)
+      get "users/#{username}/artists/muted.#{format}", page
+    end
+
   end
 end
